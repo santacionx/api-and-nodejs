@@ -18,8 +18,8 @@ CREATE DATABASE IF NOT EXISTS instagram;
 -- DROP DATABASE college;
 USE instagram;
 ```
-#schema-design
-```
+## schema-design
+```sql
 CREATE TABLE student (
   usn INT,
   name VARCHAR(30),
@@ -68,8 +68,8 @@ VALUES
 
 ```
 
-#basic-queries
-```
+## basic-queries
+```sql
 SELECT id, age, name FROM user;
 SELECT DISTINCT * FROM post;
 
@@ -79,8 +79,8 @@ SELECT COUNT(age) FROM user WHERE age > 15;
 
 
 ```
-#conditional-queries
-```
+## conditional-queries
+```sql
 Filtering Records
 SELECT * FROM user WHERE age <= 16;
 SELECT * FROM user WHERE age BETWEEN 15 AND 17;
@@ -91,8 +91,8 @@ SELECT * FROM user ORDER BY followers DESC;
 
 ```
 
-#table-manipulation
-```
+## table-manipulation
+```sql
 Update and Delete Records
 UPDATE user
 SET followers = 3000
@@ -109,8 +109,8 @@ ADD COLUMN city VARCHAR(25) DEFAULT 'banglore';
 
 
 ```
-#advanced-operations
-```
+## advanced-operations
+```sql
 Grouping and Aggregation
 SELECT age, MAX(followers) FROM user GROUP BY age;
 SELECT age, MAX(followers) FROM user GROUP BY age HAVING MAX(followers) > 1000;
