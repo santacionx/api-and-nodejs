@@ -11,6 +11,77 @@ This repository contains a comprehensive guide to SQL commands for database mani
 5. [Table Manipulation](#table-manipulation)
 6. [Advanced Operations](#advanced-operations)
 
+## points to remeber 
+```sql
+-- show databases;
+
+-- show tables;
+-- TABLE QUERIES
+-- CREATE (SCHEME DESIGN) , INSERT , UPDATE, ALTER, TRUNCATE, DELETE
+-- Data typeS:
+ -- char(0-255), varchar(0-255), blob(0-65535), INT, TINYINT  ,BIGINT, BIT,
+-- FLOAT, DOUBLE,BOOLEAN,DATE,YEAR ,unsigned +ve numbers
+-- constraints (rules)
+-- NOT NULL,  UNIQUE , DEFAULT # , CONSTRAINT (*VARIABLE_check) CHECK (CONDITION),
+-- PRIMARY KEY(UNIQUE+NOTNULL) only 1, foreign key (table1) -- references  (table2) [set of cols ref pk of another table] duplicate and null
+-- INSERT INTO TABLE_NAME (COLS) VALUE (C1,C3)
+-- select  distinct c1,c2 from tablename
+-- clauses certain condition
+-- where (conditions); +,-*,/,%,=,!=,<,<=,>,>=,and or not in between all like any,&,|
+-- and (both true) , or (any 1 true) , between (range), IN (list match)
+-- limit clause (sets upperlimit on number)
+
+select  *  from user limit 2;
+-- orderby(col) asc clause (sort asc desc)
+select  *  from user order by  followers desc;
+-- aggregate functions return 1 value
+-- count(), max(), min(), sum(),avg()
+
+-- group by clause  with aggregate only (group rows same value into summary row) call only col used in group by only
+
+
+select age ,max(followers) from user group by (age);
+
+-- having clause ~ where clause but!!  groupby used  
+select age ,max(followers) from user group by (age) having (max(followers)>1000 ) order by age desc;
+
+
+-- general order
+-- select , from , where, groupby, having orderby
+
+-- table queries (existing rows update)
+-- update  table name set col1=val1 where condition
+
+-- table queries (change schema )
+-- alter table add,drop, rename table,change column old new type,modify add new type or constraint
+
+alter table user
+add column city varchar(25) default "banglore";
+
+select * from user; 
+
+alter table user
+drop column city ;
+
+alter table user
+rename to  instauser ;
+
+select * from instauser ; 
+alter table instauser
+rename to  user ;
+
+
+alter table user
+change column followers subs int  default 0 ;
+select * from user ; 
+
+alter table user
+modify subs int default 0 ;
+select * from user ; 
+-- table queries (delete table data  ) trucate
+
+```
+
 ## Database Creation
 
 ```sql
