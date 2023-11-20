@@ -12,7 +12,7 @@ This repository contains a comprehensive guide to SQL commands for database mani
 6. [Advanced Operations](#advanced-operations)
 
 ## points to remeber 
-```sql
+
 -- show databases;
 
 -- show tables;
@@ -80,7 +80,7 @@ modify subs int default 0 ;
 select * from user ; 
 -- table queries (delete table data  ) trucate
 
-```
+
 
 ## Database Creation
 
